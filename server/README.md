@@ -8,7 +8,7 @@
 
 ### 서버 구동
 * yarn start
-* http://localhost:7300/
+* http://localhost:7300/api/users/test
 * 구동 확인
 
 ### ToDo 
