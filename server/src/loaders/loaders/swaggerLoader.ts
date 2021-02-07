@@ -19,7 +19,7 @@ export default ((app: express.Application) => {
                 },
             ],
         },
-        apis: ["./src/models/*.js", "./src/api/routes/*.ts"],
+        apis: ["./src/models/*.ts", "./src/api/routes/*.ts"],
     };
 
     const specs = swaggerJsdoc(swaggerOptions);

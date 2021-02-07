@@ -1,8 +1,12 @@
+import moment from 'moment';
+import mongoose from 'mongoose';
+import {IUser} from '../interfaces/IUser'
+
 /**
  * @swagger
  *  components:
  *    schemas:
- *      User:
+ *      user:
  *        type: object
  *        required:
  *          - name
@@ -19,10 +23,6 @@
  *           email: test@gmail.com
  */
 
-import moment from 'moment';
-import mongoose from 'mongoose';
-
-//Create Schema
 const userSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -39,6 +39,4 @@ const userSchema = new mongoose.Schema({
     }
 });
 
-const user = mongoose.model("user", userSchema);
-
-export default user;
+export default mongoose.model<IUser & mongoose.Document>('User', userSchema);

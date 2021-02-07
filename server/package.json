@@ -19,6 +19,7 @@
   "dependencies": {
     "@types/cors": "^2.8.9",
     "@types/moment": "^2.13.0",
+    "@types/mongodb": "^3.6.6",
     "@types/mongoose": "^5.10.3",
     "@types/swagger-jsdoc": "^6.0.0",
     "@types/swagger-ui-express": "^4.1.2",
@@ -26,6 +27,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "moment": "^2.29.1",
+    "mongodb": "^3.6.4",
     "mongoose": "^5.11.15",
     "swagger-jsdoc": "^6.0.2",
     "swagger-ui-express": "^4.1.6"
