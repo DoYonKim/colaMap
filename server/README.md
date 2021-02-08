@@ -7,7 +7,8 @@
 * yarn global add typescript
 
 ### 프로젝트를 처음 클론받은 경우
-* 최상위 .env.sample을 복사한 후 이름을 .env로 변경
+* 최상위 .env.sample을 복사한 후 이름을 .env로 변경, 내용 입력
+* https://cloud.mongodb.com 가입 및 db 접근권한, IP 추가 요청
 * yarn(또는 npm i) 이용 node modules 추가
 * 서버 구동
 ### 서버 구동
@@ -31,7 +32,13 @@
 - src/api/routes 폴더에 있는 파일을 수정 하는 경우 swagger 주석을 달것
 
 * src/config
-- .env 에 정의된 
+- .env 에 정의된 상수를 이용하기 위한 폴더
+
+* src/loaders
+- 서버 시작될 때 loading 되는 모듈
+
+* src/service 
+- api 의 내용이 실질적으로 동작되는 부분
 
 ### ToDo 
 * file 구조 생성 (진행중-dy)

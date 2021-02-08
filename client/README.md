@@ -13,10 +13,12 @@ sudo gem install cocoapods
 
 - ios 로 실행하기
 * ios 테스트를 위해 앱스토어에서 xcode를 설치(또는 테스트할 ios 디바이스 컴퓨터에 직접연결)
+* cd ios
+* pod install
 * yarn ios
 
 - android로 실행하기
-* android studio를 설치 (또는 테스트 할 안드로이드 디바이스 컴퓨터데 직접 연결)
+* android studio를 설치 (https://developer.android.com/studio/install)(또는 테스트 할 안드로이드 디바이스 컴퓨터데 직접 연결)
 * yarn android (해본적 없음.. ios 테스트만 해봤음)
 
 
