@@ -22,7 +22,7 @@ sudo gem install cocoapods
 * yarn android (해본적 없음.. ios 테스트만 해봤음)
 
 
-### 실행간 무넺가 발생하는 경우
+### 실행간 문제가 발생하는 경우
 - Could not find "Podfile.lock" 발생하는 경우
 ₩₩₩
 cd ios
