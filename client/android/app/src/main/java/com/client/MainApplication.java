@@ -11,6 +11,11 @@ import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
+import com.dooboolab.kakaologins.RNKakaoLoginsPackage;
+import com.kakao.auth.KakaoSDK;
+import com.dooboolab.kakaologins.KakaoSDKAdapter;
+
+
 public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost =
@@ -26,6 +31,7 @@ public class MainApplication extends Application implements ReactApplication {
           List<ReactPackage> packages = new PackageList(this).getPackages();
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
+          // packages.add(new RNKakaoLoginsPackage());
           return packages;
         }
 
@@ -45,6 +51,12 @@ public class MainApplication extends Application implements ReactApplication {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
+    
+    // Kakao SDK 초기화
+    if (KakaoSDK.getAdapter() == null) {
+      KakaoSDK.init(new KakaoSDKAdapter(getApplicationContext()));
+    }
+    // KakaoSdk.init(this, "97188822b11ff35ebeba5d22d09eea07");
   }
 
   /**

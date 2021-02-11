@@ -19,7 +19,8 @@ sudo gem install cocoapods
 
 - android로 실행하기
 * android studio를 설치 (https://developer.android.com/studio/install)(또는 테스트 할 안드로이드 디바이스 컴퓨터데 직접 연결)
-* yarn android (해본적 없음.. ios 테스트만 해봤음)
+* 안드로이드 가상머신 구동
+* yarn android
 
 
 ### 실행간 문제가 발생하는 경우
