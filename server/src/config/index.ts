@@ -12,4 +12,10 @@ export default {
 
     //Database info
     databaseURL: <string>process.env.DATABASE_URL,
+
+    //kakao login
+    kakao: {
+        clientId: process.env.KAKAO_CLIENT_ID,
+        clientSecret: process.env.KAKAO_CLIENT_SECRET,
+    },
 }

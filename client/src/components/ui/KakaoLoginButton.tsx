@@ -1,8 +1,9 @@
 import React from 'react';
+import config from '../../config'
 import { View, Image, Button, ImageBackground, TouchableOpacity, Text, Linking} from 'react-native';
 // import config from '../../config/index'
 
-const uri = "https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=";//+ config.kakao.appKey + "&redirect_uri=http://localhost:3003/api/auth/get-kakao-token";
+const uri = "https://kauth.kakao.com/oauth/authorize?response_type=code&client_id="+ config.kakao.appKey + "&redirect_uri=http://localhost:3003/api/auth/get-kakao-token";
 
 const image:string = "../../assets/img/kakao_login_large_wide.png";
 
