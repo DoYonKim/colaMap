@@ -24,7 +24,7 @@
 ### Front side
 
 * Type script
-* React native
+* Expo
 * Styled-component
 
 ### Back side 
