@@ -1,7 +1,7 @@
 import {Request, Response} from 'express';
 import {getLocationInfoFromKakaoMap, registLocationData} from './locationServiceLogic';
 
-import {typeLocation} from "../type";
+import {typeLocation, typeRegistLocation, typeResult} from "../type";
 export const getLocationInfo = async (req: Request, res: Response) => {
 
     try {
@@ -42,10 +42,18 @@ export const getLocationInfo = async (req: Request, res: Response) => {
 export const registLocation = async (req: Request, res: Response) => {
 
     try {
-        const locationData: typeLocation = req.body;
-        const resgistResult = await registLocationData(locationData);
+        const registData: typeRegistLocation = req.body;
+        const registLocation: typeLocation = registData.locationInfo;
+        const registUser: string = registData.registUserID;
 
-        res.status(200).json(resgistResult);
+        await registLocationData(registLocation)
+                .then((resgistResult: typeResult)=>{
+                    if(resgistResult.isSucceeded){
+                        console.log(resgistResult);
+                        console.log("그리핀도르에 10점");
+                    }
+                    res.status(200).json(resgistResult);
+                });
 
     } catch (e) {
         console.log(e);

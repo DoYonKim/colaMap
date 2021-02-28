@@ -51,7 +51,7 @@ export default (app:Router)=> {
      *        content:
      *          application/json:
      *            schema:
-     *              $ref: '#/components/schemas/location'
+     *              $ref: '#/components/schemas/registLocation'
      *      responses:
      *        "200":
      *          description: A user schema

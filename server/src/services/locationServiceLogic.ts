@@ -2,7 +2,7 @@ import locationModel from '../models/locationModel';
 import {Request, Response} from 'express';
 import config from '../config'
 import axios from 'axios';
-import { typeLocation } from '../type';
+import { typeLocation, typeResult } from '../type';
 
 export function getLocationInfoFromKakaoMap (location:typeLocation): string {
 
@@ -29,44 +29,35 @@ export function getLocationInfoFromKakaoMap (location:typeLocation): string {
     return "test";
 }
 
-export const registLocationData = async (locationData: typeLocation) => {
+export const registLocationData = async (locationData: typeLocation): Promise<typeResult> => {
     
     const locationId: string  = <string><any>locationData.locationId;
     const {name, address, x, y} = locationData;
 
-    locationModel.findOne({ locationId }).then((locationInfo) => {
-        if (locationInfo)
-            return ({ msg: "이미 있는 location 정보입니다." });
+    let result:typeResult = {isSucceeded: false, message: ""};
 
-        const newlocation = new locationModel({
-            name: name,
-            locationId: locationId,
-            address: address,
-            x: x,
-            y: y,
-            camp: {
-                region: "neutral",
-                deliver: {coca: 0, pepsi: 0},
-                pickup: {coca: 0, pepsi: 0},                
-                togo: {coca: 0, pepsi: 0},                
-            }
-        });
-
-        newlocation.save();
-        console.log(newlocation, "registLocation: 새로운 location을 등록했습니다.");
-
-        return({
-            name: name,
-            locationId: locationId,
-            address: address,
-            x: x,
-            y: y,
-            camp: {
-                region: "neutral",
-                deliver: {coca: 0, pepsi: 0},
-                pickup: {coca: 0, pepsi: 0},                
-                togo: {coca: 0, pepsi: 0},                
-            }
-        });
+    await locationModel.findOne({ locationId }).then((locationInfo) => {
+        if (locationInfo){
+            result =  {isSucceeded: false, message: "이미 있는 location 정보입니다." };
+        }else{
+            const newlocation = new locationModel({
+                name: name,
+                locationId: locationId,
+                address: address,
+                x: x,
+                y: y,
+                camp: {
+                    region: "neutral",
+                    deliver: {coca: 0, pepsi: 0},
+                    pickup: {coca: 0, pepsi: 0},                
+                    togo: {coca: 0, pepsi: 0},                
+                }
+            });
+    
+            newlocation.save();
+            result =  {isSucceeded: true, message: "장소 등록 성공" };
+        }
     });
+    return result;
+
 };
