@@ -6,19 +6,19 @@ export default {
     screens: {
       Root: {
         screens: {
-          TabOne: {
+          TabMyLocation: {
             screens: {
-              TabOneScreen: 'one',
+              TabMyLocationScreen: 'one',
             },
           },
-          TabTwo: {
+          TabMap: {
             screens: {
-              TabTwoScreen: 'two',
+              TabMapScreen: 'two',
             },
           },
-          TabThree: {
+          TabProfile: {
             screens: {
-              TabThreeScreen: 'three',
+              TabProfileScreen: 'three',
             },
           },
         },
